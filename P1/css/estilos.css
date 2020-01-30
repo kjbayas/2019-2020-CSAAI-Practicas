@@ -1,13 +1,37 @@
+/*------General-------*/
+ul{
+  list-style-type: none;
+}
 body{
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
+/*-------ASIDE------*/
 aside{
   background: #333;
   color: #eee;
 }
+aside h2{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+aside section h2:first-child{
+  border-bottom: 2px solid white;
+}
+
+ #profile img{
+   border-radius: 20%;
+ }
+ /*-------MAIN-------*/
 main{
   background: #eee;
   color: #333;
+}
+.hero{
+  background-color: #F6FBE2;
+}
+.hero h2{
+  color: white;
+  border-top: 2px solid;
 }
