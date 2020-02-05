@@ -18,7 +18,7 @@ h1{
 /*-------ASIDE------*/
 
 aside{
-  background: #333;
+  background: #006064;
   color: #eee;
   width: 30%
 }
@@ -26,10 +26,9 @@ aside{
 aside h2{
   text-transform: uppercase;
   letter-spacing: 2px;
+  text-align: center;
 }
-aside section h2:first-child{
-  border-bottom: 2px solid white;
-}
+
 
  #profile img{
    border-radius: 20%;
@@ -38,12 +37,13 @@ aside section h2:first-child{
 main{
   background: #eee;
   color: #333;
-  align: left;
+  align: center;
   width: 70%
 }
 .hero{
-  background-color: #8E87E8;
+  background-color: #00BFA5;
   background-position: center;
+
 }
 .hero h{
   color: white;
