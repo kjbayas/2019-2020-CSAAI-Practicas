@@ -20,9 +20,9 @@ h1{
 aside{
   background: #006064;
   color: #eee;
-  width: 30%
+  width: 40%
 }
-
+ /*las palabras contacto ...*/
 aside h2{
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -31,7 +31,7 @@ aside h2{
 
 
  #profile img{
-   border-radius: 20%;
+   border-radius: 25%
  }
  /*-------MAIN-------*/
 main{
@@ -40,12 +40,12 @@ main{
   align: center;
   width: 70%
 }
-.hero{
-  background-color: #00BFA5;
+.hero-text{
+  background-color: #00BFA4;
   background-position: center;
-
+  text-align: center;
 }
-.hero h{
-  color: white;
-  border-top: 2px solid;
+
+.hero-text2 di{
+  
 }
