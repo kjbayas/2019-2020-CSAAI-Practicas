@@ -1,9 +1,5 @@
 /*------General-------*/
-ul{
-  list-style-type: none;
-}
 body{
-  background-image: url("img/fondo.jp");
   margin: 0;
   padding: 0;
   font-family: monospace;
@@ -17,29 +13,29 @@ h1{
 
 
 /*-------ASIDE------*/
-
+#profile img{
+  border-radius: 25%;
+}
 aside{
   background: #006064;
   color: #eee;
   width: 30%
 }
- /*las palabras contacto ...*/
+
 aside h2{
   text-transform: uppercase;
   letter-spacing: 2px;
   text-align: center;
-
+}
+.aside-text ul{
+  list-style-type: none;
 }
 
- #profile img{
-   border-radius: 25%;
-   background-position: center;
- }
  /*-------MAIN-------*/
 main{
   background-image: url("./img/foto.jpg");
   align: center;
-  margin-left: 10px;
+  margin-left: 15px;
   width: 70%
 
 }
