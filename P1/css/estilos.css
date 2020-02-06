@@ -29,12 +29,10 @@ aside h2{
   text-align: center;
 
 }
-aside p{
-
-}
 
  #profile img{
-   border-radius: 25%
+   border-radius: 25%;
+   background-position: center;
  }
  /*-------MAIN-------*/
 main{
