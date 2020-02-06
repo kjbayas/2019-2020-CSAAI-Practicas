@@ -20,29 +20,38 @@ h1{
 aside{
   background: #006064;
   color: #eee;
-  width: 40%
+  width: 30%
 }
  /*las palabras contacto ...*/
 aside h2{
   text-transform: uppercase;
   letter-spacing: 2px;
   text-align: center;
-}
 
+}
+aside p{
+
+}
 
  #profile img{
    border-radius: 25%
  }
  /*-------MAIN-------*/
 main{
-  background-image: url(img/fondo.jpg);
+  background-image: url("./img/foto.jpg");
   align: center;
+  margin-left: 10px;
   width: 70%
+
 }
 .hero-text{
   background-color: #00BFA4;
   background-position: center;
   text-align: center;
+    margin-left: -50px;
+}
+.hero-text p{
+  margin-bottom: 5px;
 }
 .hero-text2 di{
   font-weight:bold;
