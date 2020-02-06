@@ -35,8 +35,7 @@ aside h2{
  }
  /*-------MAIN-------*/
 main{
-  background: #eee;
-  color: #333;
+  background-image: url(img/fondo.jpg);
   align: center;
   width: 70%
 }
@@ -44,4 +43,8 @@ main{
   background-color: #00BFA4;
   background-position: center;
   text-align: center;
+}
+.hero-text2 di{
+  font-weight:bold;
+  color: #00BFA8;
 }
