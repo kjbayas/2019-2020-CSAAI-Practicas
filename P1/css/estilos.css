@@ -30,7 +30,9 @@ aside h2{
 .aside-text ul{
   list-style-type: none;
 }
-
+.links a{
+  color: #A9E2F3;
+}
  /*-------MAIN-------*/
 main{
   background-image: url("./img/foto.jpg");
@@ -52,7 +54,7 @@ main{
   font-weight:bold;
   color: #00BFA8;
 }
-.hero-b button{
+.boton button{
   text-decoration: none;
   padding: 5px;
   font-weight: 500;
