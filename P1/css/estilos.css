@@ -54,6 +54,7 @@ main{
   font-weight:bold;
   color: #00BFA8;
 }
+
 .boton button{
   text-decoration: none;
   padding: 5px;
@@ -62,4 +63,5 @@ main{
   color: #ffffff;
   background-color: #00BFA4;
   border-radius: 3px;
+  float: right;
 }
