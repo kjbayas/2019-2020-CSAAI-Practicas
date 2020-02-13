@@ -1,0 +1,12 @@
+body{
+  background-color: lightblue;
+}
+
+h1{
+  color: white; /* para el color */
+
+}
+p{
+  background-color: grey; /*Para el fondo*/
+  color: pink;
+}

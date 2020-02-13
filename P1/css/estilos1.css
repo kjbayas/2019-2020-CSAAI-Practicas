@@ -1,0 +1,21 @@
+body{
+
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: inline-flex;
+}
+
+aside{
+  background: #006064;
+  color: #eee;
+  width: 30%
+}
+
+main{
+  background-image: url("fondo.jpg");
+  align: center;
+  margin-left: 15px;
+  width: 70%
+
+}

@@ -1,0 +1,12 @@
+body{
+  padding: 30px; /*Relleno por dentro del margen rosa*/
+  border: solid; /*Borde de todo el cuerpo */
+  border-color: #bd3c6d;
+  margin: 10px;/*Esto es lo que va fuera del margen rosa*/
+}
+p{/*Parrafo un elemnto de bloque por eso cuando ponemos margen lo ocupa en todo*/
+  padding: 10px; /*Relleno*/
+  border: solid;
+  border-color: #3a839b;
+  margin: 20px;
+}
