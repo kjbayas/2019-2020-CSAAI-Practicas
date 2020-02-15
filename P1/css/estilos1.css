@@ -1,21 +1,72 @@
 body{
-
-  margin: 0;
+  margin: 10px;
   padding: 0;
-  min-height: 100vh;
-  display: inline-flex;
+  background-image: url("postre.webp");
+  background-repeat: repeat;
+  padding: 10px;
+  border: none;
+  background-attachment: fixed;
+}
+/*Fuentes*/
+@font-face {
+  font-family: 'miFuente';
+  src: url(../fuentes/CookieMonster.ttf);
+}
+@font-face {
+  font-family: 'miFuente2';
+  src: url(../fuentes/Candcu__.ttf);
 }
 
-aside{
-  background: #006064;
-  color: #eee;
-  width: 30%
+/*textos principales*/
+p{
+  background-color: rgba(231, 252, 253, 0.70);
+  font: italic 100% monospace;
+  margin: 8px;
+  padding: 15px;
+  border: 1px dashed #E733FF;
+  border-radius: 25px;
+}
+h2{
+  color: #91E4E0;
+  letter-spacing: 8px;
+  font-family: 'miFuente2';
+  font-size: 30px;
+  margin-bottom: 0px
+}
+ul{
+  background-color: rgba(231, 252, 253, 0.70);
+  font: italic 100% monospace;
+  margin: 8px;
+  padding: 15px;
+  border: 1px dashed #E733FF;
+  border-radius: 25px;
+}
+/*div con class*/
+.title{
+  text-align: center;
+  font-size: 20px;
+  color: #C61A8A;
+  letter-spacing: 15px;
+  font-family: 'miFuente';
+}
+/*div con id*/
+#foto{
+  padding-top: 17px;
 }
 
-main{
-  background-image: url("fondo.jpg");
-  align: center;
-  margin-left: 15px;
-  width: 70%
-
+#derecha{
+  border-top: 25px;
+  float: right;
+  text-align: center;
+  width: 25%;
+  border-radius: 25px;
+  background-color: rgb(173,42,167,0.75);
+}
+#izquierda{
+  border-top: 25px;
+  float: left;
+  text-align: center;
+  width: 73%;
+  border-radius: 25px;
+  background-color: rgb(173,42,167,0.75);
 }
