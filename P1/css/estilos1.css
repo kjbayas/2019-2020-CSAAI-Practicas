@@ -27,7 +27,7 @@ p{
   border-radius: 25px;
 }
 h2{
-  color: #91E4E0;
+  color: #AB7BDA;
   letter-spacing: 8px;
   font-family: 'miFuente2';
   font-size: 30px;
@@ -52,10 +52,14 @@ ul{
   letter-spacing: 15px;
   font-family: 'miFuente';
 }
-.subt{
+.title h1{
+    margin-bottom: 0px;
+}
+.subt {
   font-family: 'miFuente2';
   font-size:30px;
-  color: #B497B3;
+  color: #AB7BDA;
+  padding-bottom: 30px;
 }
 /*div con id*/
 #foto{
@@ -72,7 +76,7 @@ ul{
   text-align: center;
   width: 25%;
   border-radius: 25px;
-  background-color: rgb(173,42,167,0.75);
+  background-color: rgb(123,218,205,0.45);
   min-height: 70vh;
 }
 .link a{
@@ -84,21 +88,13 @@ ul{
   text-align: center;
   width: 73%;
   border-radius: 25px;
-  background-color: rgb(173,42,167,0.75);
+  background-color: rgb(123,218,205,0.45);
   min-height: 70vh;
 }
 .listas li{
   list-style
 }
-#inferior{
-  border-top: 25px;
-  text-align: center;
-  clear: right;
-  clear: left;
-  width: 73%;
-  border-radius: 25px;
-  background-color: rgb(173,42,167,0.75);
-}
+
 .boton p1{
     font-family: 'miFuente2';
     color: #ffffff;
