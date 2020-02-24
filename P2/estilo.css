@@ -1,0 +1,43 @@
+body{
+  padding: 0px;
+  margin: 0px;
+  font-family: sans-serif;
+}
+.carcasa{
+  background-color: lightgrey;
+  width: fit-content;
+  margin: auto;
+  margin-top: 30px;
+}
+.pantalla{
+  padding: 18px 18px 0px 18px;
+}
+#resultado{
+  background-color: white;
+  padding: 9px;
+}
+.Fila1 {
+  padding: 10px 20px 0px 20px; /*arriba- derecha- abajo- izquierda*/
+}
+.Fila2 {
+  padding: 10px 20px 0px 20px; /*arriba- derecha- abajo- izquierda*/
+}
+.Fila3 {
+  padding: 10px 20px 0px 20px; /*arriba- derecha- abajo- izquierda*/
+}
+.Fila4 {
+  padding: 10px 20px 10px 20px; /*arriba- derecha- abajo- izquierda*/
+}
+.botones button{
+  transition-duration: 0.9s;
+}
+.botones button:hover{ /*le da la sombra a los botones */
+  background-color: #7BC4DA;
+  color: white;
+}
+button{
+  margin: 2px;
+  padding: 15px 24px;
+  font-size: 20px;
+  border: none;
+}
