@@ -16,6 +16,9 @@ body{
   background-color: white;
   padding: 9px;
 }
+.Fila0 {
+  padding: 10px 20px 0px 20px; /*arriba- derecha- abajo- izquierda*/
+}
 .Fila1 {
   padding: 10px 20px 0px 20px; /*arriba- derecha- abajo- izquierda*/
 }
