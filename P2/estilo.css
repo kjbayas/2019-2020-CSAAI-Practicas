@@ -1,19 +1,26 @@
 body{
   padding: 0px;
-  margin: 0px;
+  margin-left: 180px;
+  margin-right: 180px;
   font-family: sans-serif;
+  background-image: url(cal.webp);
 }
 .carcasa{
-  background-color: lightgrey;
+  background-color: rgba(255, 80, 80,0.5);
   width: fit-content;
   margin: auto;
   margin-top: 30px;
+  text-align: center;
+
 }
 .pantalla{
   padding: 18px 18px 0px 18px;
+  margin-left: 100px;
+  margin-right: 100px;
+  text-align: center;
 }
 #resultado{
-  background-color: white;
+  background-color: rgba(255, 255, 255,0.9);
   padding: 9px;
 }
 .Fila0 {
@@ -35,7 +42,7 @@ body{
   transition-duration: 0.9s;
 }
 .botones button:hover{ /*le da la sombra a los botones */
-  background-color: #7BC4DA;
+  background-color: #800000;
   color: white;
 }
 button{
