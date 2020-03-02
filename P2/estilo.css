@@ -7,17 +7,19 @@ body{
 }
 .carcasa{
   background-color: rgba(255, 80, 80,0.5);
-  width: fit-content;
+  width: 500px;
+  height: 400px;
   margin: auto;
   margin-top: 30px;
   text-align: center;
-
+  border-radius: 45px;
 }
 .pantalla{
   padding: 18px 18px 0px 18px;
   margin-left: 100px;
   margin-right: 100px;
   text-align: center;
+
 }
 #resultado{
   background-color: rgba(255, 255, 255,0.9);
@@ -40,6 +42,7 @@ body{
 }
 .botones button{
   transition-duration: 0.9s;
+  border-radius: 45px;
 }
 .botones button:hover{ /*le da la sombra a los botones */
   background-color: #800000;
