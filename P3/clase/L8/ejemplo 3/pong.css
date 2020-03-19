@@ -1,0 +1,9 @@
+/* Fondo de la página */
+body {
+    background-color: pink;
+}
+
+/* Estilo para el canvas: Negro */
+#canvas {
+  background-color: grey;
+}
