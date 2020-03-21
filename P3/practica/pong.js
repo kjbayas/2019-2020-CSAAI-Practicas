@@ -44,9 +44,7 @@ function draw() {
 }
 
 //---- Bucle principal de la animación
-function animacion()
-{
-
+function animacion(){
   //-- Actualizar las posiciones de los objetos móviles
 
   //-- Actualizar la raqueta con la velocidad actual
@@ -56,7 +54,7 @@ function animacion()
   //-- Comprobar si la bola ha alcanzado el límite derecho
   //-- Si es así, se cambia de signo la velocidad, para
   // que "rebote" y vaya en el sentido opuesto
-  if (bola.x > canvas.width || bola.x <= 0) {
+  if (bola.x >= canvas.width ) {
     //-- Hay colisión. Cambiar el signo de la bola
     bola.vx = bola.vx * -1;
   }
@@ -66,7 +64,7 @@ function animacion()
       bola.y >= raqI.y && bola.y <=(raqI.y + raqI.height)) {
     bola.vx = bola.vx * -1 ;
   }
-  //-- Comprobar si hay colisión con la raqueta izquierda
+  //-- Comprobar si hay colisión con la raqueta derecha
   if (bola.x >= raqD.x && bola.x <=(raqD.x + raqD.width) &&
       bola.y >= raqD.y && bola.y <=(raqD.y + raqD.height)) {
     bola.vx = bola.vx * -1 ;
