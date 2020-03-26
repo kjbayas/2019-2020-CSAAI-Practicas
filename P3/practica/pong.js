@@ -6,15 +6,31 @@ const canvas = document.getElementById("canvas");
 //-- Sus dimensiones las hemos fijado en el fichero
 //-- HTML. Las imprimimos en la consola
 console.log(`canvas: Anchura: ${canvas.width}, Altura: ${canvas.height}`);
-
 //-- Obtener el contexto para pintar en el canvas
 const ctx = canvas.getContext("2d");
 
+//-- Obtener Sonidos
+const sonido_raqueta = new Audio("pong-raqueta.mp3");
+const sonido_rebote = new Audio("pong-rebote.mp3");
+
+//-- Estados del juego
+const ESTADO = {
+  INIT: 0,
+  SAQUE: 1,
+  JUGANDO: 2,
+}
+
+//-- Variable de estado
+//-- Arrancamos desde el estado inicial
+let estado = ESTADO.INIT;
+
 //-- Pintar todos los objetos en el canvas
 function draw() {
-
   //----- Dibujar la Bola
-  bola.draw();
+  //-- Solo en el estado de jugando
+  if (estado == ESTADO.JUGANDO) {
+    bola.draw();
+  }
 
   //-- Dibujar las raquetas
   raqI.draw();
@@ -26,7 +42,7 @@ function draw() {
   //-- Estilo de la linea: discontinua
   //-- Trazos de 10 pixeles, y 10 de separacion
   ctx.setLineDash([10, 10]);
-  ctx.strokeStyle = 'white';
+  ctx.strokeStyle = 'green';
   ctx.lineWidth = 2;
   //-- Punto superior de la linea. Su coordenada x está en la mitad
   //-- del canvas
@@ -41,6 +57,20 @@ function draw() {
   ctx.fillStyle = "#C0E3C6";
   ctx.fillText("0", 200, 380);
   ctx.fillText("1", 340, 380);
+
+  //-- Dibujar el texto de sacar
+  if (estado == ESTADO.SAQUE) {
+    ctx.font = "10px Arial";
+    ctx.fillStyle = "yellow";
+    ctx.fillText("Saca!", 30, 350);
+  }
+
+  //-- Dibujar el texto de comenzar
+  if (estado == ESTADO.INIT) {
+    ctx.font = "10px Arial";
+    ctx.fillStyle = "green";
+    ctx.fillText("Pulsa Start!", 30, 350);
+  }
 }
 
 //---- Bucle principal de la animación
@@ -57,17 +87,46 @@ function animacion(){
   if (bola.x >= canvas.width ) {
     //-- Hay colisión. Cambiar el signo de la bola
     bola.vx = bola.vx * -1;
+    //-- Reproducir sonido
+    sonido_rebote.currentTime = 0;
+    sonido_rebote.play();
+  }else if (bola.x <= (canvas.width==0)){
+    bola.vx = bola.vx * -1;
+  } else if (bola.y >= canvas.height){
+    bola.vy = bola.vy * -1;
+  } else if (bola.y <= 0){
+    bola.vy = bola.vy * -1;
   }
+
+
+  //-- Si llega al límite izquierdo, hemos perdido
+  //-- pasamos al estado de SAQUE
+  if (bola.x <= bola.size) {
+     estado = ESTADO.SAQUE;
+     bola.init();
+     console.log("Tanto!!!!");
+     return;
+  }
+  //choqu con la parte superior
+  if (bola.y < 0 || bola.y >= canvas.height){
+          bola.hit();
+        }
 
   //-- Comprobar si hay colisión con la raqueta izquierda
   if (bola.x >= raqI.x && bola.x <=(raqI.x + raqI.width) &&
       bola.y >= raqI.y && bola.y <=(raqI.y + raqI.height)) {
     bola.vx = bola.vx * -1 ;
+    //-- Reproducir sonido
+    sonido_raqueta.currentTime = 0;
+    sonido_raqueta.play();
   }
   //-- Comprobar si hay colisión con la raqueta derecha
   if (bola.x >= raqD.x && bola.x <=(raqD.x + raqD.width) &&
       bola.y >= raqD.y && bola.y <=(raqD.y + raqD.height)) {
     bola.vx = bola.vx * -1 ;
+    //-- Reproducir sonido
+    sonido_raqueta.currentTime = 0;
+    sonido_raqueta.play();
   }
 
 
@@ -101,26 +160,39 @@ setInterval(()=>{
 
 //-- Retrollamada de las teclas
 window.onkeydown = (e) => {
+  //-- En el estado inicial no se
+  //-- hace caso de las teclas
+  if (estado == ESTADO.INIT)
+    return;
 
   switch (e.key) {
     case "a":
-      raqI.v = 1;
+      raqI.v = raqI.v_ini;
       break;
     case "q":
-      raqI.v = -1;
+      raqI.v = raqI.v_ini * -1;
       break;
     case "p":
-      raqD.v =  -1;
+      raqD.v = raqD.v_ini * -1;
       break;
     case "l":
-      raqD.v = 1;
+      raqD.v = raqD.v_ini;
       break;
-    case " ":
-      //-- Llevar bola a su posicion incicial
-      bola.init();
+    case "s":
 
-      //-- Darle velocidad
-      bola.vx = bola.vx_ini;
+      //-- El saque solo funciona en el estado de SAQUE
+      if (estado == ESTADO.SAQUE) {
+        //-- Reproducir sonido
+        sonido_raqueta.currentTime = 0;
+        sonido_raqueta.play();
+        //-- Llevar bola a su posicion incicial
+        bola.init();
+        //-- Darle velocidad
+        bola.vx = bola.vx_ini;
+        //-- Cambiar al estado de jugando!
+        estado = ESTADO.JUGANDO;
+        return false;
+      }
     default:
   }
 }
@@ -135,4 +207,23 @@ window.onkeyup = (e) => {
   if (e.key == "p" || e.key == "l") {
     raqD.v = 0;
   }
+}
+
+//-- Botón de arranque
+const start = document.getElementById("start");
+
+start.onclick = () => {
+  estado = ESTADO.SAQUE;
+  console.log("SAQUE!");
+  canvas.focus();
+}
+
+//-- Boton de stop
+const stop = document.getElementById("stop");
+
+stop.onclick = () => {
+  //-- Volver al estado inicial
+  estado = ESTADO.INIT;
+  bola.init();
+  start.disabled = false;
 }
