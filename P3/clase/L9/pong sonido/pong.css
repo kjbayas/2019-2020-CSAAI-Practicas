@@ -1,0 +1,11 @@
+/* Fondo de la página */
+body {
+    background-color: pink;
+}
+h1{
+  text-align: center;
+}
+/* Estilo para el canvas: Negro */
+#canvas {
+  background-color: grey;
+}
