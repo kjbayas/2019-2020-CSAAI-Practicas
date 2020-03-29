@@ -8,6 +8,7 @@ const canvas = document.getElementById("canvas");
 console.log(`canvas: Anchura: ${canvas.width}, Altura: ${canvas.height}`);
 //-- Obtener el contexto para pintar en el canvas
 const ctx = canvas.getContext("2d");
+//Marcador
 
 //-- Obtener Sonidos
 const sonido_raqueta = new Audio("pong-raqueta.mp3");
@@ -19,7 +20,6 @@ const ESTADO = {
   SAQUE: 1,
   JUGANDO: 2,
 }
-
 //-- Variable de estado
 //-- Arrancamos desde el estado inicial
 let estado = ESTADO.INIT;
@@ -31,7 +31,6 @@ function draw() {
   if (estado == ESTADO.JUGANDO) {
     bola.draw();
   }
-
   //-- Dibujar las raquetas
   raqI.draw();
   raqD.draw();
@@ -114,7 +113,8 @@ function animacion(){
 
   //-- Comprobar si hay colisión con la raqueta izquierda
   if (bola.x >= raqI.x && bola.x <=(raqI.x + raqI.width) &&
-      bola.y >= raqI.y && bola.y <=(raqI.y + raqI.height)) {
+      bola.y >= raqI.y && bola.y <=(raqI.y + raqI.height)&&
+      (raqI.v <= 0)) {
     bola.vx = bola.vx * -1 ;
     //-- Reproducir sonido
     sonido_raqueta.currentTime = 0;
@@ -122,14 +122,22 @@ function animacion(){
   }
   //-- Comprobar si hay colisión con la raqueta derecha
   if (bola.x >= raqD.x && bola.x <=(raqD.x + raqD.width) &&
-      bola.y >= raqD.y && bola.y <=(raqD.y + raqD.height)) {
+      bola.y >= raqD.y && bola.y <=(raqD.y + raqD.height)&&
+      (raqD.v <= 0)) {
     bola.vx = bola.vx * -1 ;
     //-- Reproducir sonido
     sonido_raqueta.currentTime = 0;
     sonido_raqueta.play();
   }
 
-
+  //Comprobar si la raqueta toca los bordes del canvas
+  if (raqI.y <=0){
+    raqI.y = raqI.y * -1;
+  }
+  //Comprobar si la raqueta toca los bordes del canvas
+  if (raqD.y <=0){
+    raqD.y = raqD.y * -1;
+  }
   //-- Actualizar coordenada x de la bola, en funcion de
   //-- su velocidad
   bola.update()
@@ -139,6 +147,7 @@ function animacion(){
 
   //-- Dibujar el nuevo frame
   draw();
+  window.requestAnimationFrame(animacion);
 }
 
 //-- Inicializa la bola: Llevarla a su posicion inicial
@@ -154,9 +163,8 @@ raqD.y_ini = 300;
 raqD.init();
 
 //-- Arrancar la animación
-setInterval(()=>{
   animacion();
-},16);
+
 
 //-- Retrollamada de las teclas
 window.onkeydown = (e) => {
@@ -189,6 +197,8 @@ window.onkeydown = (e) => {
         bola.init();
         //-- Darle velocidad
         bola.vx = bola.vx_ini;
+        
+
         //-- Cambiar al estado de jugando!
         estado = ESTADO.JUGANDO;
         return false;
