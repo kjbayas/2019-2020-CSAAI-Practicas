@@ -41,7 +41,7 @@ function draw() {
   //-- Estilo de la linea: discontinua
   //-- Trazos de 10 pixeles, y 10 de separacion
   ctx.setLineDash([10, 10]);
-  ctx.strokeStyle = 'green';
+  ctx.strokeStyle = '#C5D6FA';
   ctx.lineWidth = 2;
   //-- Punto superior de la linea. Su coordenada x está en la mitad
   //-- del canvas
@@ -53,27 +53,25 @@ function draw() {
 
   //-- Dibujar el texto de comenzar
   if (estado == ESTADO.INIT) {
-    ctx.font = "20px Arial";
-    ctx.fillStyle = "green";
-    ctx.fillText("Pulsa Start!", 30, 350);
+    ctx.font = "30px monospace";
+    ctx.fillStyle = "#A1CFE9";
+    ctx.fillText("Pulsa Start !", 30, 40);
     console.log('init');
   }
 
   //-- Dibujar el texto de sacar
   if (estado == ESTADO.SAQUE) {
     //------ Dibujar el tanteo
-    ctx.font = "15px Arial";
+    ctx.font = "20px monospace";
     ctx.fillStyle = "#C0E3C6";
-    ctx.fillText("Jugador A: " +marcD, 170, 380);
+    ctx.fillText("Jugador A: " +marcD, 120, 380);
     ctx.fillText("Jugador B: " +marcI, 340, 380);
-    if ((marcD==0)&(marcI==0)){
-    ctx.font = "20px Arial";
-    ctx.fillStyle = "blue";
-    ctx.fillText("Saca con s", 30, 350);
+      if ((marcD==0)&(marcI==0)){
+        ctx.font = "20px monospace";
+        ctx.fillStyle = "#FAC5F1";
+        ctx.fillText("Saca con s", 70, 40);
+      }
   }
-
-  }
-
 }//termina el draw
 
 //---- Bucle principal de la animación
@@ -88,13 +86,13 @@ function animacion(){
   //-- Si es así, se cambia de signo la velocidad, para
   // que "rebote" y vaya en el sentido opuesto
   if (bola.x >= canvas.width) {
-    marcI++;
+    marcD++;
     estado = ESTADO.SAQUE;
     bola.init();
     console.log("Tanto!!!!");
     return;
   }else if (bola.x <= (canvas.width==0)) {
-    marcD++;
+    marcI++;
     estado = ESTADO.SAQUE;
     bola.init();
     console.log("Tanto!!!!");
