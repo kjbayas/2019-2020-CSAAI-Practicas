@@ -53,7 +53,7 @@ function draw() {
 
   //-- Dibujar el texto de comenzar
   if (estado == ESTADO.INIT) {
-    ctx.font = "10px Arial";
+    ctx.font = "20px Arial";
     ctx.fillStyle = "green";
     ctx.fillText("Pulsa Start!", 30, 350);
     console.log('init');
@@ -62,13 +62,13 @@ function draw() {
   //-- Dibujar el texto de sacar
   if (estado == ESTADO.SAQUE) {
     //------ Dibujar el tanteo
-    ctx.font = "10px Arial";
+    ctx.font = "15px Arial";
     ctx.fillStyle = "#C0E3C6";
-    ctx.fillText("Jugador A: " +marcD, 200, 380);
+    ctx.fillText("Jugador A: " +marcD, 170, 380);
     ctx.fillText("Jugador B: " +marcI, 340, 380);
     if ((marcD==0)&(marcI==0)){
-    ctx.font = "10px Arial";
-    ctx.fillStyle = "yellow";
+    ctx.font = "20px Arial";
+    ctx.fillStyle = "blue";
     ctx.fillText("Saca con s", 30, 350);
   }
 
