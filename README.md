@@ -3,3 +3,7 @@ Mis prácticas de la asignatura Construcción de Servicios y Aplicaciones Audiov
 Curso 2019-2020  
 
 Este repositorio debe estar configurado como una página web
+p1 https://kjbayas.github.io/2019-2020-CSAAI-Practicas/P1/CV.html
+p2 https://kjbayas.github.io/2019-2020-CSAAI-Practicas/P2/
+p3 https://kjbayas.github.io/2019-2020-CSAAI-Practicas/P3/practica/pong.html
+p4 
