@@ -11,14 +11,18 @@ const ctx = canvas.getContext("2d");
 //-- Obtener Sonidos
 const sonido_raqueta = new Audio("pong-raqueta.mp3");
 const sonido_rebote = new Audio("pong-rebote.mp3");
+const sonido_fondo = new Audio("sonido-fondo.mp3");
+
 //Marcador
 var marcD=0;
 var marcI=0;
+var puntmax=5;
 //-- Estados del juego
 const ESTADO = {
   INIT: 0,
   SAQUE: 1,
   JUGANDO: 2,
+  FIN: 3,
 }
 //-- Variable de estado
 //-- Arrancamos desde el estado inicial
@@ -30,6 +34,11 @@ function draw() {
   //-- Solo en el estado de jugando
   if (estado == ESTADO.JUGANDO) {
     bola.draw();
+  }
+  if(estado == ESTADO.FIN){
+    ctx.fillStyle = "white black";
+    ctx.font = "100px monospace";
+    ctx.fillText("GAME OVER", 20, 100);
   }
   //-- Dibujar las raquetas
   raqI.draw();
@@ -70,7 +79,10 @@ function draw() {
         ctx.font = "20px monospace";
         ctx.fillStyle = "#FAC5F1";
         ctx.fillText("Saca con s", 70, 40);
+      }else if(marcD >= puntmax || marcI >= puntmax) {
+        estado=ESTADO.FIN;
       }
+
   }
 }//termina el draw
 
@@ -89,13 +101,11 @@ function animacion(){
     marcD++;
     estado = ESTADO.SAQUE;
     bola.init();
-    console.log("Tanto!!!!");
     return;
   }else if (bola.x <= (canvas.width==0)) {
     marcI++;
     estado = ESTADO.SAQUE;
     bola.init();
-    console.log("Tanto!!!!");
     return;
   }
   if (bola.y >= canvas.height || bola.y <= 0 ){
@@ -123,7 +133,7 @@ function animacion(){
   }
 
   //Comprobar si la raqueta toca los bordes del canvas
-  if (raqI.y <=0){
+  if (raqI.y <=0 || raqD.y <=0){
     raqI.y = raqI.y * -1;
   }
   //Comprobar si la raqueta toca los bordes del canvas
@@ -194,6 +204,7 @@ window.onkeydown = (e) => {
         bola.vy = bola.vy_ini;
         //-- Cambiar al estado de jugando!
         estado = ESTADO.JUGANDO;
+        bola.vx = bola.vx *1;
         return false;
       }
     default:
@@ -217,6 +228,8 @@ const start = document.getElementById("start");
 
 start.onclick = () => {
   estado = ESTADO.SAQUE;
+  sonido_fondo.currentTime = 0;
+  sonido_fondo.play();
   console.log("SAQUE!");
   canvas.focus();
 }
@@ -227,6 +240,9 @@ const stop = document.getElementById("stop");
 stop.onclick = () => {
   //-- Volver al estado inicial
   estado = ESTADO.INIT;
+  sonido_fondo.pause();
+  marcD=0;
+  marcI=0;
   bola.init();
   start.disabled = false;
 }
