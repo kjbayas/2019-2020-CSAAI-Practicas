@@ -1,0 +1,25 @@
+body {
+    background-image: url(imagen1.jpg);
+}
+
+button{
+  text-decoration: none;
+  padding: 20px;
+  height: 60px;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #0E517B;
+  border-radius: 10%;
+  border:none;
+  text-align: center;
+}
+.botones{
+  text-align: center;
+}
+p{
+  text-align: center;
+  color: pink;
+  border: none;
+  font-family:monospace;
+  font-size: 50px;
+}
