@@ -18,12 +18,11 @@ const video3 = document.getElementById("video3")
 video3.width=300;  //-- Tamaño de la pantalla de video
 video3.height=200;
 video3.src="https://github.com/kjbayas/videos/raw/master/video3.mp4";
-
 //video 4
 const video4 = document.getElementById("video4")
-video4.width=300;  //-- Tamaño de la pantalla de video
-video4.height=200;
-video4.src="https://github.com/kjbayas/videos/raw/master/dyp.png";
+video4.width=500;  //-- Tamaño de la pantalla de video
+video4.height=600;
+video4.poster="https://github.com/kjbayas/videos/raw/master/dyp.png";
 //-- Obtener los botones
 const play1 = document.getElementById("play1")
 //-- Función de retrollamada del botón de ver
@@ -47,13 +46,3 @@ play3.onclick = () => {
   video4.muted=false;
   video4.loop=false;
 };
-const stop = document.getElementById("stop")
-
-//-- Funcion de retrollamada del boton de parar
-stop.onclick = () => {
-  video1.pause();
-
-  //-- Quitar la fuente de video, para que se muestre la
-  //-- imagen definida en el atributo poster
-  video1.src=null;
-}
