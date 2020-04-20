@@ -1,0 +1,48 @@
+body {
+    background-image: url(imagen1.jpg);
+}
+@font-face {
+  font-family: 'miFuente2';
+  src: url(waltograph42.otf);
+}
+
+button{
+  text-decoration: none;
+  padding: 20px;
+  height: 60px;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #0E517B;
+  border-radius: 10%;
+  border:none;
+  text-align: center;
+}
+.botones{
+  text-align: center;
+}
+p{
+  text-align: center;
+  color: black;
+  border: none;
+  font-family: 'miFuente2';
+  font-size: 80px;
+  margin-bottom: 0px;
+}
+.video4{
+  text-align: center;
+}
+.video1{
+  float: left;
+  margin-left: 100px;
+  text-align: center;
+}
+.video2{
+  float: left;
+  margin-left: 200px;
+  text-align: center;
+}
+.video3{
+  float: left;
+  margin-left: 200px;
+  text-align: center;
+}
