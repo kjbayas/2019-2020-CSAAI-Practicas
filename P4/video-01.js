@@ -1,4 +1,5 @@
 console.log("Ejecutando JS...");
+
 //video 1
 //----- Obtener elemento de video y configurarlo
 const video1 = document.getElementById("video1")
@@ -54,4 +55,14 @@ play3.onclick = () => {
   document.getElementById("video3").style.border = "thick solid blue";
   document.getElementById("video1").style.border = "none";
   document.getElementById("video2").style.border = "none";
+};
+var bucle = document.getElementById("bucle");
+bucle.onclick = () => {
+  console.log("bucle");
+    video4.loop=true;
+};
+var nobucle = document.getElementById("nobucle");
+nobucle.onclick = () => {
+  console.log("No bucle");
+    video4.muted=false;
 };

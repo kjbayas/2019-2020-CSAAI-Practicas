@@ -1,5 +1,5 @@
 body {
-    background-image: url(imagen1.jpg);
+    background-image: url(mesa.jpg);
 }
 @font-face {
   font-family: 'miFuente2';
@@ -12,17 +12,18 @@ button{
   height: 60px;
   font-size: 20px;
   color: #ffffff;
-  background-color: #0E517B;
+  background-color: #26998f;
   border-radius: 10%;
   border:none;
   text-align: center;
+  font-family: 'miFuente2';
 }
 .botones{
   text-align: center;
 }
 p{
   text-align: center;
-  color: black;
+  color: white;
   border: none;
   font-family: 'miFuente2';
   font-size: 80px;
