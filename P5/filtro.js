@@ -37,12 +37,13 @@ function main() {
     var data = imagGrey.data
 
     //-- Filtra la imagen segun el nuevo umbral
-    for (var i = 0; i < data.length; i+=4) {
-      var r = data[i];
-      var g = data[i+1];
-      var b = data[i+2];
-      var v = (3*r +4*g + b)/8;
-      data[i] = data[i+1] = data[i+2] = v
+    for (var i = 0; i < data.length; i++) {
+      var promedio =Math.round((imagGrey.data[i*4]
+        +imagGrey.data[i*4 + 1]
+        +imagGrey.data[i*4 + 2])/3);
+        imagGrey.data[i*4] = promedio;
+        imagGrey.data[i*4 +1] = promedio;
+        imagGrey.data[i*4+2] = promedio;
       }
       ctx.putImageData(imagGrey, 0, 0);
   }
