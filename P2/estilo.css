@@ -33,11 +33,17 @@ body{
   font-size: 20px;
   letter-spacing: 2px;
 }
-
+h2{
+  font-size: 80px;
+  text-align: center;
+  color: #eddcf7;
+  margin: 0px;
+  letter-spacing: 2px;
+  text-shadow: -3px -3px 3px #4f067a, 3px -3px 3px #4f067a, -3px 3px 3px #4f067a, 3px 3px 3px #4f067a;
+}
 .botones{
   column-count: 4;
   margin-top: 20px;
-
 }
 button{
   transition-duration: 0.9s;
@@ -54,13 +60,4 @@ button{
 .botones button:hover{ /*le da la sombra a los botones */
   background-color: #800000;
   color: white;
-}
-
-h2{
-  font-size: 80px;
-  text-align: center;
-  color: #eddcf7;
-  margin: 0px;
-  letter-spacing: 2px;
-  text-shadow: -3px -3px 3px #4f067a, 3px -3px 3px #4f067a, -3px 3px 3px #4f067a, 3px 3px 3px #4f067a;
 }
