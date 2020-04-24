@@ -1,58 +1,57 @@
+@font-face {
+  font-family: 'miFuente2';
+  src: url(waltograph42.otf);
+}
 body{
   padding: 0px;
   margin-left: 180px;
   margin-right: 180px;
   margin-top: 200px;
-  font-family: sans-serif;
-  background-image: url(cal.webp);
-
+  font-family: 'miFuente2';
+  background-image: url(papel.jpg);
 }
+
 .carcasa{
-  background-color: rgba(255, 80, 80,0.5);
-  width: 500px;
-  height: 450px;
+  background-color: rgba(255, 80, 80,0.8);
+  width: 520px;
+  height: 500px;
   margin: auto;
   margin-top: 30px;
   text-align: center;
-  border-radius: 45px;
-}
-.pantalla{
-  padding: 18px 18px 0px 18px;
-  margin-left: 100px;
-  margin-right: 100px;
-  text-align: center;
-
+  border-radius: 20px;
+  border-color: rgba(255, 255, 255,0.3);
+  border-style: solid;
 }
 #resultado{
-  background-color: rgba(255, 255, 255,0.9);
+  background-color: rgba(255, 255, 255,0.3);
   padding: 9px;
+  
 }
-.Fila0 {
-  padding: 10px 20px 0px 20px; /*arriba- derecha- abajo- izquierda*/
+#display{
+  background-color: rgba(255, 255, 255,1);
+  padding: 9px;
+  font-size: 20px;
+  letter-spacing: 2px;
 }
-.Fila1 {
-  padding: 10px 20px 0px 20px; /*arriba- derecha- abajo- izquierda*/
-}
-.Fila2 {
-  padding: 10px 20px 0px 20px; /*arriba- derecha- abajo- izquierda*/
-}
-.Fila3 {
-  padding: 10px 20px 0px 20px; /*arriba- derecha- abajo- izquierda*/
-}
-.Fila4 {
-  padding: 10px 20px 10px 20px; /*arriba- derecha- abajo- izquierda*/
-}
-.botones button{
-  transition-duration: 0.9s;
-  border-radius: 45px;
-}
-.botones button:hover{ /*le da la sombra a los botones */
-  background-color: #800000;
-  color: white;
+
+.botones{
+  column-count: 4;
+  margin-top: 20px;
+
 }
 button{
+  transition-duration: 0.9s;
+  border-radius: 10px;
+  width: 80px;
+  height: 70px;
   margin: 2px;
   padding: 15px 24px;
   font-size: 20px;
   border: none;
+  font-family: 'miFuente2';
+  background-color: #e8f3f3;
+}
+.botones button:hover{ /*le da la sombra a los botones */
+  background-color: #800000;
+  color: white;
 }
