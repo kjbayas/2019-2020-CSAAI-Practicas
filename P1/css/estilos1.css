@@ -91,10 +91,10 @@ ul{
   background-color: rgb(123,218,205,0.45);
   min-height: 70vh;
 }
-.listas li{
-  list-style
+.galletas li{
+  list-style-image: url("cookie.png");
+  align-items: center;
 }
-
 .boton p1{
     font-family: 'miFuente2';
     color: #ffffff;
@@ -109,4 +109,6 @@ ul{
   border-radius: 10%;
   border:none;
   font-family: 'miFuente2';
+  margin-top: 20px;
+  margin-bottom: 45px;
 }
