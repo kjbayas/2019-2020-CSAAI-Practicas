@@ -23,8 +23,7 @@ function main() {
   //-- que el de la imagen original
   canvas.width = img.width;
   canvas.height = img.height;
-  //-- Obtener el contexto del canvas para
-  //-- trabajar con el
+  //-- Obtener el contexto del canvas para trabajar con el
   var ctx = canvas.getContext("2d");
 
   //-- Situar la imagen original en el canvas
