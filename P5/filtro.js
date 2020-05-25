@@ -13,7 +13,7 @@ function main() {
   range_valueR = document.getElementById('range_valueR');
   range_valueG = document.getElementById('range_valueG');
   range_valueB = document.getElementById('range_valueB');
-  grey = document.getElementById('boton1');
+
   //-- Mostramos la imagen original
   original = document.getElementById('botonoriginal');
     original.onclick = () => {
@@ -29,7 +29,7 @@ function main() {
   //-- Situar la imagen original en el canvas
   //-- No se han hecho manipulaciones todavia
   ctx.drawImage(img, 0,0);
-
+  grey = document.getElementById('boton1');
   grey.onclick=()=>{
     var imagGrey = ctx.getImageData(0, 0, canvas.width, canvas.height);
     //-- Obtener el array con todos los píxeles
@@ -46,6 +46,14 @@ function main() {
       }
       ctx.putImageData(imagGrey, 0, 0);
   }
+  // mirror
+  mirror = document.getElementById('mirror');
+    mirror.onclick = () => {
+        ctx.drawImage(img, 0,0);
+        ctx.translate(2*(img.width)/2,0);
+        ctx.scale(-1,1);
+        ctx.drawImage(img, 0,0);
+    }
 
   function umbral(){
 
@@ -90,12 +98,4 @@ function main() {
   deslizadorB.oninput = () => {
     umbral()
   }
-}
- // mirror
-var mirror = document.getElementById('mirror');
-mirror.onclick = () => {
-  ctx.drawImage(img, 0,0);
-  ctx.translate(2*(img.width)/2,0);
-  ctx.scale(-1,1);
-  ctx.drawImage(img, 0,0);
 }
