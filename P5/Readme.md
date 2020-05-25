@@ -1,4 +1,6 @@
 # Práctica 5 filtro
+https://kjbayas.github.io/2019-2020-CSAAI-Practicas/P5/filtro.html
+
 Esta práctica tiene las funciones básicas:
 - Deslizadores de RGB
 - Escala de grises
